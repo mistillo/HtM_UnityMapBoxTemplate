@@ -514,11 +514,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HackTheMachineApp
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: C:\Users\Greg\Documents\HackTheMachine\GitRepo\stARkIndustries\HackTheMachineApp\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 802c8512c453d401
   metroApplicationDescription: HackTheMachineApp
   wsaImages: {}
   metroTileShortName: 
