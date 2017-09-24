@@ -4,6 +4,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Aa]pp/
+/[Aa]pps/
 /Assets/AssetStoreTools*
 
 /*.cache

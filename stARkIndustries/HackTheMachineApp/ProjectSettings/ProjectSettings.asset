@@ -518,7 +518,7 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 802c8512c453d401
+  metroCertificateNotAfter: 80c63c474c54d401
   metroApplicationDescription: HackTheMachineApp
   wsaImages: {}
   metroTileShortName: 
