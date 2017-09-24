@@ -25,6 +25,9 @@ namespace HoloToolkit.Unity
         [Range(0.0f, 1.0f), Tooltip("The factor applied to the smoothing algorithm. 1.0f is super smooth. But slows things down a lot.")]
         public float SmoothingFactor = 0.75f;
 
+        [Tooltip("Distance below the camera to target")]
+        public float YOffset = 0.5f;
+
         // The BoxCollider represents the volume of the object that is tagging
         // along. It is a required component.
         protected BoxCollider tagalongCollider;
@@ -107,7 +110,14 @@ namespace HoloToolkit.Unity
 
             // Calculate a default position where the Tagalong should go. In this
             // case TagalongDistance from the camera along the gaze vector.
-            toPosition = cameraTransform.position + cameraTransform.forward * TagalongDistance;
+            var position = cameraTransform.position;
+            position.y -= YOffset;
+
+            var forward = cameraTransform.forward;
+            forward.y = 0;
+            forward.Normalize();
+
+            toPosition = position + forward * TagalongDistance;
 
             // Create a Ray and set it's origin to be the default toPosition that
             // was calculated above.
@@ -149,6 +159,7 @@ namespace HoloToolkit.Unity
 
             // Similar logic follows below for determining if and how the
             // Tagalong would need to move up or down.
+            /*
             bool moveDown = frustumPlanes[frustumTop].GetDistanceToPoint(fromPosition) < 0;
             bool moveUp = frustumPlanes[frustumBottom].GetDistanceToPoint(fromPosition) < 0;
             if (moveDown)
@@ -166,6 +177,7 @@ namespace HoloToolkit.Unity
                 plane.Raycast(ray, out distanceOffset);
                 toPosition.y = ray.GetPoint(distanceOffset).y;
             }
+            */
 
             // Create a ray that starts at the camera and points in the direction
             // of the calculated toPosition.
